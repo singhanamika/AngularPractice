@@ -11,10 +11,10 @@ export class CourseComponent implements OnInit {
 	specific_name : Object
 	Title = "Name of Courses";
 /*Courses :[{
-        id: string,
-        name : string,
+id: string},
+{name : string},
         
-    }];*/
+    ]*/
 	Courses: any[];
   
 	           

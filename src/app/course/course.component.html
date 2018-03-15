@@ -1,34 +1,40 @@
 <h1>{{Title}}</h1>
 
-<input [(ngModel)]="search" (keyup.enter) = "OnKeyUp()"/>
+  <mat-form-field>
+    <input matInput placeholder="Party Group" [(ngModel)]="search">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Input" *ngIf="specific_name">
+	{{ specific_name.name  }}
+  </mat-form-field> 
+  <br/>
+  <br/><br/>
+  
+  <mat-form-field>
+  <input matInput [matDatepicker]="start" placeholder="Start Date">
+  <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+  <mat-datepicker #start></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="end" placeholder="End Date">
+  <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+  <mat-datepicker #end></mat-datepicker>
+</mat-form-field>
+<!--<input [(ngModel)]="search" (keyup.enter) = "OnKeyUp()"/> -->
 <ul>
 <li *ngFor = "let C of Courses| filter : search" (click)= "clicked(C)">
 {{ C.id}} 
 {{C.name}}
 
 </li>
-<!--<label>
-    Date
-    <input [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
-    <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
-</label> 
-<form #form="ngForm">
-    <date-picker ngModel name="date"></date-picker>
-</form>
 
-
-     <ng-datepicker [(ngModel)]="date"></ng-datepicker> -->
-	 
-	<md-input-container>
-    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-    <button mdSuffix [mdDatepickerToggle]="picker"></button>
-</md-input-container>
-<md-datepicker #picker></md-datepicker>
-<div class="mdl-cell mdl-cell--4-col">
+<!--<div class="mdl-cell mdl-cell--4-col"> 
         <div *ngIf="specific_name">
             
             <h3>Name: {{ specific_name.name  }}</h3>
           
         </div>  
-    </div>
+    </div> -->
   

@@ -1,4 +1,5 @@
-import { EmailService } from 'app/email.service';
+//import { EmailService } from 'app/email.service';
+import { Http } from '@angular/http';
 import { Component, OnInit} from '@angular/core';
 
 
@@ -8,20 +9,32 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-	specific_name : Object
-	Title = "Name of Courses";
+	//specific_name : Object
+	//Title = "Name of Courses";
 /*Courses :[{
 id: string},
 {name : string},
         
     ]*/
-	Courses: any[];
+	//Courses: any[];
   
-	           
+	posts: any[];
+  constructor(private http:Http) { }
+  doGET(){
+	  
+ this.http.get('https://jsonplaceholder.typicode.com/posts')
+         .subscribe(response =>{
+			 
+			 this.posts = response.json();
+		 });
+ }
+		 
+	ngOnInit() {
+  } 
 	
 
-  constructor(service: EmailService) {
-this.Courses = service.getCourses();
+  //constructor(service: EmailService) {
+//this.Courses = service.getCourses();
 // Make instance/object of Service
 //But this method is not good for unit testing coz objects are tightely coupled. 
 
@@ -31,7 +44,7 @@ this.Courses = service.getCourses(); */
 // DEPENDENCY INJECTION
 
 
-  }
+ // }
 /*  OnKeyUp(){
 	
 	console.log(this.search);
@@ -44,13 +57,12 @@ console.log(this.Courses.name);
 	
 	
 }*/
-myDate = new Date();
-clicked(C: any){
+//myDate = new Date();
+/*clicked(C: any){
 
     this.specific_name = C
 
-  }
-  ngOnInit() {
-  }
+  }*/
+  
 
 }

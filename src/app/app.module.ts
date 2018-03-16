@@ -1,15 +1,17 @@
-
+import { HttpModule} from '@angular/http';
 import { FilterPipe } from 'app/filter.pipe';  
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 import	{MatNativeDateModule} from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
-import { EmailService } from 'app/email.service';
+//import { EmailService } from 'app/email.service';
+
 
 
 
@@ -17,7 +19,8 @@ import { EmailService } from 'app/email.service';
   declarations: [
     AppComponent,
     CourseComponent,
-	FilterPipe
+	FilterPipe,
+	
   ],
   imports: [
     BrowserModule,
@@ -26,11 +29,13 @@ import { EmailService } from 'app/email.service';
 	BrowserAnimationsModule,
 	MatInputModule,
 	MatDatepickerModule,
-	MatNativeDateModule
+	MatNativeDateModule,
+	HttpModule,
+	MatIconModule
   ],
   providers: [
  
-  EmailService
+ // EmailService
   ],
   bootstrap: [AppComponent]
 })

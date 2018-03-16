@@ -1,12 +1,14 @@
 <h1>{{Title}}</h1>
 
   <mat-form-field>
+  
     <input matInput placeholder="Party Group" [(ngModel)]="search">
+<button mat-icon-button (click)="doGET()">	<mat-icon> search </mat-icon> </button>
   </mat-form-field>
   
   <mat-form-field>
-    <input matInput placeholder="Input" *ngIf="specific_name">
-	{{ specific_name.name  }}
+    <input matInput placeholder="Input">
+	<!--{{ specific_name.name  }} -->
   </mat-form-field> 
   <br/>
   <br/><br/>
@@ -23,13 +25,21 @@
   <mat-datepicker #end></mat-datepicker>
 </mat-form-field>
 <!--<input [(ngModel)]="search" (keyup.enter) = "OnKeyUp()"/> -->
-<ul>
+<!--<ul>
 <li *ngFor = "let C of Courses| filter : search" (click)= "clicked(C)">
 {{ C.id}} 
 {{C.name}}
 
-</li>
+</li> -->
+<ul class = "list-group">
+<li *ngFor = "let post of posts" class = "list-group-item" >
 
+
+{{post.title}}
+
+</li>
+</ul>
+<!--<button class="btn btn-primary" (click)="doGET()">GET</button> -->
 <!--<div class="mdl-cell mdl-cell--4-col"> 
         <div *ngIf="specific_name">
             

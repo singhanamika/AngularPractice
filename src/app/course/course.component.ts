@@ -1,7 +1,7 @@
-//import { EmailService } from 'app/email.service';
+import { EmailService } from 'app/email.service';
 import { Http } from '@angular/http';
 import { Component, OnInit} from '@angular/core';
-
+import { Course } from '../course';
 
 @Component({
   selector: 'app-course',
@@ -18,19 +18,19 @@ id: string},
     ]*/
 	//Courses: any[];
   
-	posts: any[];
-  constructor(private http:Http) { }
-  doGET(){
+	//posts: any[];
+ // constructor(private http:Http) { }
+ // doGET(){
 	  
- this.http.get('https://jsonplaceholder.typicode.com/posts')
-         .subscribe(response =>{
+ //this.http.get('https://jsonplaceholder.typicode.com/posts')
+       //  .subscribe(response =>{
 			 
-			 this.posts = response.json();
-		 });
- }
+		//	 this.posts = response.json();
+		// });
+// }
 		 
-	ngOnInit() {
-  } 
+	//ngOnInit() {
+  //} 
 	
 
   //constructor(service: EmailService) {
@@ -63,6 +63,19 @@ console.log(this.Courses.name);
     this.specific_name = C
 
   }*/
-  
+  courses: Course[]; 
+ //selectedHero: Hero;
+ //onSelect(hero: Hero): void {
+ // this.selectedHero = hero;
+//}
+  constructor(private emailService: EmailService) { }
+  getCourses(): void {
+  this.emailService.getCourses()
+      .subscribe(courses => this.courses = courses);
+}
+
+  ngOnInit() {
+	  this.getCourses();
+  } 
 
 }

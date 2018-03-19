@@ -10,7 +10,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
-//import { EmailService } from 'app/email.service';
+import { EmailService } from 'app/email.service';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -31,11 +32,12 @@ import { CourseComponent } from './course/course.component';
 	MatDatepickerModule,
 	MatNativeDateModule,
 	HttpModule,
-	MatIconModule
+	MatIconModule,
+	MatTableModule
   ],
   providers: [
  
- // EmailService
+ EmailService
   ],
   bootstrap: [AppComponent]
 })

@@ -3,7 +3,7 @@
   <mat-form-field>
   
     <input matInput placeholder="Party Group" [(ngModel)]="search">
-<button mat-icon-button (click)="doGET()">	<mat-icon> search </mat-icon> </button>
+
   </mat-form-field>
   
   <mat-form-field>
@@ -31,6 +31,7 @@
 {{C.name}}
 
 </li> -->
+<!--<button mat-icon-button (click)="doGET()">	<mat-icon> search </mat-icon> </button>
 <ul class = "list-group">
 <li *ngFor = "let post of posts" class = "list-group-item" >
 
@@ -38,8 +39,52 @@
 {{post.title}}
 
 </li>
-</ul>
-<!--<button class="btn btn-primary" (click)="doGET()">GET</button> -->
+</ul> -->
+
+<!--<mat-table #table [dataSource]="courses">
+
+     Position Column 
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let course"> {{course.id}} </mat-cell>
+    </ng-container>
+	
+	<ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let course"> {{course.name}} </mat-cell>
+    </ng-container>
+
+ <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table> 
+<ul>
+  <li *ngFor="let course of courses">
+    
+    
+    {{course.id}}
+	{{course.name}}
+  </li>
+</ul> -->
+<table>
+<thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+		        <th>Subject</th>
+      </tr>
+    </thead>
+<tbody>
+
+      <tr *ngFor="let course of courses">
+        
+        <td>{{course.id}}</td>
+        <td>{{course.name}}</td>
+        <td>{{course.age}}</td>
+		<td>{{course.subject}}</td>
+      </tr>
+    </tbody>
+	</table>
 <!--<div class="mdl-cell mdl-cell--4-col"> 
         <div *ngIf="specific_name">
             

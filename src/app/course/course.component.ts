@@ -64,10 +64,7 @@ console.log(this.Courses.name);
 
   }*/
   courses: Course[]; 
- //selectedHero: Hero;
- //onSelect(hero: Hero): void {
- // this.selectedHero = hero;
-//}
+ 
   constructor(private emailService: EmailService) { }
   getCourses(): void {
   this.emailService.getCourses()

@@ -63,16 +63,20 @@ console.log(this.Courses.name);
     this.specific_name = C
 
   }*/
-  courses: Course[]; 
+  //courses: Course[]; 
  
-  constructor(private emailService: EmailService) { }
-  getCourses(): void {
-  this.emailService.getCourses()
-      .subscribe(courses => this.courses = courses);
-}
+ // constructor(private emailService: EmailService) { }
+  //getCourses(): void {
+  //this.emailService.getCourses()
+  //    .subscribe(courses => this.courses = courses);
+//}
 
+ // ngOnInit() {
+	//  this.getCourses();
+ // } 
+constructor() { }
+  
   ngOnInit() {
-	  this.getCourses();
+	 
   } 
-
 }

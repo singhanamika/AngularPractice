@@ -1,4 +1,4 @@
-import { HttpModule} from '@angular/http';
+import { HttpClientModule} from '@angular/common/http';
 import { FilterPipe } from 'app/filter.pipe';  
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +12,9 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { EmailService } from 'app/email.service';
 import {MatTableModule} from '@angular/material/table';
+import { ReusableComponent } from './reusable/reusable.component';
+import { UsertableComponent } from './usertable/usertable.component';
+import { UserService } from 'app/user.service';
 
 
 
@@ -21,6 +24,8 @@ import {MatTableModule} from '@angular/material/table';
     AppComponent,
     CourseComponent,
 	FilterPipe,
+	ReusableComponent,
+	UsertableComponent,
 	
   ],
   imports: [
@@ -31,13 +36,14 @@ import {MatTableModule} from '@angular/material/table';
 	MatInputModule,
 	MatDatepickerModule,
 	MatNativeDateModule,
-	HttpModule,
+	HttpClientModule,
 	MatIconModule,
 	MatTableModule
   ],
   providers: [
  
- EmailService
+ EmailService,
+ UserService
   ],
   bootstrap: [AppComponent]
 })

@@ -10,12 +10,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
-import { EmailService } from 'app/email.service';
+//import { EmailService } from 'app/email.service';
 import {MatTableModule} from '@angular/material/table';
-import { ReusableComponent } from './reusable/reusable.component';
+//import { ReusableComponent } from './reusable/reusable.component';
 import { UsertableComponent } from './usertable/usertable.component';
-import { UserService } from 'app/user.service';
-
+//import { UserService } from 'app/user.service';
+import { KeyspipePipe } from './keyspipe.pipe';
 
 
 
@@ -24,8 +24,9 @@ import { UserService } from 'app/user.service';
     AppComponent,
     CourseComponent,
 	FilterPipe,
-	ReusableComponent,
+	//ReusableComponent,
 	UsertableComponent,
+	KeyspipePipe
 	
   ],
   imports: [
@@ -42,8 +43,8 @@ import { UserService } from 'app/user.service';
   ],
   providers: [
  
- EmailService,
- UserService
+ //EmailService,
+ //UserService
   ],
   bootstrap: [AppComponent]
 })
